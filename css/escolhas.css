@@ -82,3 +82,17 @@ input[type="button"]:hover{
     margin-top: 20px;
     font-size: 5em;
 }
+#letras_passadas{
+    margin: 30px auto;
+    width: 300px;
+}
+#letras_passadas ul{
+    text-align: left;
+    list-style: none;
+}
+#certo{
+    color: green;
+}
+#errado{
+    color: red;
+}
