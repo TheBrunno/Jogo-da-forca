@@ -27,7 +27,10 @@
     <script src="../../js/palavras.js"></script>
     <script src="../../js/game.js"></script>
     <script>
-        var palavra = palavras["objetos"][Math.round(Math.random()*palavras["objetos"].length)]
+        var palavra = palavras["objetos"][Math.round(Math.random()*(palavras["objetos"].length - 2))]
+        const root = document.documentElement;
+        root.style.setProperty('--clara', palavras["objetos"][palavras["objetos"].length - 2])
+        root.style.setProperty('--escura', palavras["objetos"][palavras["objetos"].length - 1])
     </script>
 </body>
 </html>

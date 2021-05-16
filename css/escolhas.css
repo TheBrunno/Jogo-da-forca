@@ -1,10 +1,14 @@
+:root{
+    --clara: none;
+    --escura: none;
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f6f6f6;
 }
 header{
     text-align: center;
-    background-image: linear-gradient(to right, #d90429, #ef233c);
+    background-image: linear-gradient(to right, var(--clara), var(--escura));
     color: #edf2f4;
     padding: 20px;
 }
@@ -34,7 +38,7 @@ input, label{
     background-color: inherit;
 }
 input[type="text"]{
-    border: 2px solid #d90429;
+    border: 2px solid var(--escura);
     padding: 10px;
     border-radius: 24px;
     text-align: center;
@@ -50,10 +54,10 @@ input[type="button"]{
     border-radius: 24px;
     border: none;
     color: #edf2f4;
-    background-color: #ef233c;
+    background-color: var(--clara);
     margin:0 auto;
     transition: 0.5s;
 }
 input[type="button"]:hover{
-    background-color: #d90429;
+    background-color: var(--escura);
 }
