@@ -17,20 +17,22 @@
             <p>Vidas restantes: <br><span id="vidas_restantes"></span></p>
         </section>
         <section>
-            <form>
+            <form onsubmit="return false" autocomplete="off">
                 <label>Palpite</label>
                 <input type="text" id="palpite">
-                <input type="button" value="Confirmar">
+                <input type="button" value="Confirmar" id="button">
             </form>
         </section>
     </main>
+    <article id="letters"></article>
     <script src="../../js/palavras.js"></script>
-    <script src="../../js/game.js"></script>
     <script>
-        var palavra = palavras["objetos"][Math.round(Math.random()*(palavras["objetos"].length - 2))]
+        var palavra = palavras["objetos"][Math.round(Math.random()*(palavras["objetos"].length - 3))]
         const root = document.documentElement;
         root.style.setProperty('--clara', palavras["objetos"][palavras["objetos"].length - 2])
         root.style.setProperty('--escura', palavras["objetos"][palavras["objetos"].length - 1])
     </script>
+    <script src="../../js/creatediv.js"></script>
+    <script src="../../js/game.js"></script>
 </body>
 </html>

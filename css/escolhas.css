@@ -16,7 +16,6 @@ h1{
     font-size: 2.5em;
 }
 main{
-    margin-top: 30px;
     display: flex;
     justify-content: space-between;
 }
@@ -25,12 +24,30 @@ main section:last-child{
 }
 section{
     background-color: #fff;
-    margin: 0 30px;
+    margin: 30px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 8px 1px #b1b1b15d;
     text-align: center;
     font-weight: bold;
+}
+article{
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 20px;
+    justify-content: center;
+}
+.letra{
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin: 0 15px;
+    border-bottom: 2px solid black;
+    text-align: center;
+    font-size: 6em;
 }
 input, label{
     display: block;
