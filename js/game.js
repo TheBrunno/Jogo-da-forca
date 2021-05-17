@@ -10,15 +10,13 @@ life.innerHTML = vida
 var letras_certas = new Array()
 var letras_erradas = new Array()
 
-function verificarArray(array, letra, local){
+function verificarArray(array, letra){
     for(let ind in array){
-        console.log(array[ind])
         if(array[ind].toUpperCase() == letra.toUpperCase()){
-            return undefined
+            return false
         }
     }
-    array.push(letra.toUpperCase())
-    local.innerHTML = array
+    return true
 }
 
 function palpite(space){
@@ -30,25 +28,36 @@ function palpite(space){
     if(palpite[0] == undefined || palpite[0] == ''){
         alert('Digite algo')
     }else{
+        palpite = palpite[0].toUpperCase()
         for(var i in palavra){
-            if(palavra[i].toUpperCase() == palpite[0].toUpperCase()){
+            if(palavra[i].toUpperCase() == palpite){
+                if(verificarArray(letras_certas, palpite) == false){
+                    alert('Essa letra já foi digitada')
+                    return
+                }
                 possui = true
                 acertos++
-                space[i].innerHTML = palavra[i].toUpperCase()
-                verificarArray(letras_certas, palavra[i], certo)
+                space[i].innerHTML = palpite
                 if(acertos == palavra.length){
                     alert('Você ganhou!!')
                     location.reload()
                 }
             }
         }
-        if(possui == false){
-            vida--
-            verificarArray(letras_erradas, palpite[0], errado)
-            life.innerHTML = vida
-            if(vida == 0){
-                alert(`Você perdeu!!\nResposta: ${palavra.toUpperCase()}`)
-                location.reload()
+        if(possui == true){
+            letras_certas.push(palpite)
+            certo.innerHTML = letras_certas
+        }else{
+            if(verificarArray(letras_erradas, palpite) == true && 
+            verificarArray(letras_certas, palpite) == true){
+                letras_erradas.push(palpite)
+                errado.innerHTML = letras_erradas
+                vida--
+                life.innerHTML = vida
+                if(vida == 0){
+                    alert(`Você perdeu!!\nResposta: ${palavra.toUpperCase()}`)
+                    location.reload()
+                }
             }
         }
         var palpite = document.getElementById('palpite').value = ''
